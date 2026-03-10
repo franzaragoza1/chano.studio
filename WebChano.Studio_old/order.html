@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="chano studio | indecent audio works">
+    <meta property="og:description" content="specialists in club oriented electronic music">
+    <meta property="og:url" content="https://chano.studio/"> <meta property="og:site_name" content="CHANO STUDIO">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://chano.studio/img/LOGO_RED_WHITE.png"> <meta property="og:image:width" content="auto"> <meta property="og:image:height" content="auto"> <meta property="og:locale" content="en_US"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:site" content="@TUCUENTADETWITTER"> <meta name="twitter:creator" content="@TUCUENTADETWITTER"> <meta name="twitter:title" content="CHANO STUDIO | MASTERING & MIXING">
+    <meta name="twitter:description" content="chano studio | indecent audio works">
+    <meta name="twitter:image" content="https://chano.studio/img/LOGO_RED_WHITE.png"> <meta name="description" content="CHANO STUDIO: PROFESSIONAL MASTERING AND MIXING FOR CLUB-ORIENTED ELECTRONIC MUSIC WITH OVER 10 YEARS OF EXPERIENCE.">
+    <meta name="keywords" content="MASTERING, MIXING, ELECTRONIC MUSIC, CLUB MUSIC, AUDIO MASTERING, FRAN ZARAGOZA, FRANKYGRAMA, DEPAART, STUDIO">
+    <meta name="author" content="CHANO STUDIO">
+    <title>Chano Studio - Place Your Order</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html#home">
+                    <img src="img/logotipo_chano2.png" alt="Chano Studio Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#works">WORKS</a></li>
+                    <li><a href="index.html#pricing">PRICING</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="order-form-section">
+        <div class="container">
+            <h2>PLACE YOUR ORDER</h2>
+
+            <form action="/php/order.php" method="post"> <div class="form-group">
+                    <label for="name">YOUR NAME:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">YOUR EMAIL:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="track-name">TRACK NAME:</label>
+                    <input type="text" id="track-name" name="track-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="artist-name">ARTIST NAME:</label>
+                    <input type="text" id="artist-name" name="artist-name" required>
+                </div>
+                
+                
+
+                <div class="form-group">
+                    <label for="stems-link">SHARE YOUR TRACK/STEMS IN A UNIQUE LINK:</label>
+                    <input type="text" id="stems-link" name="stems-link" placeholder="E.G., DROPBOX, GOOGLE DRIVE, MEGA LINK" required>
+
+                    <p class="form-help-text" style="margin-bottom: 10px;">
+                        <br>
+                        <strong>IMPORTANT NOTES ABOUT THE FILES:</strong>
+                    </p>
+
+                    <ul class="form-help-list">
+                        <li>PLEASE PROVIDE A LINK WITH YOUR FILES (DROPBOX, GOOGLE DRIVE, MEGA, ETC.).</li>
+                        <li>ENSURE THE LINK IS PUBLICLY ACCESSIBLE OR GRANTS NECESSARY PERMISSIONS.</li>
+                        <li>
+                        <strong class="bounce-instructions">BOUNCING TRACKS OR STEMS:</strong> <ul class="sub-list">
+                        <li>IDEAL FORMAT -> WAV/AIFF | SAMPLERATE: 44.1KHz | BITRATE: 24BITS</li>
+                        <li>PLEASE NAME THE FILES: ARTIST_TRACK_SAMPLERATE_BITRATE <br> [Ex: FRANKYDRAMA_DENIAL_44100_24]</li>
+                    </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="instructions">SPECIAL INSTRUCTIONS:</label>
+                    <textarea id="instructions" name="instructions"></textarea>
+                    <p class="form-help-text">ANY GUIDE FOR THE WORK. YOU CAN ALSO REFERENCE ARTISTS/TRACKS AS EXAMPLE OF THE SOUND YOU WANT FOR YOUR TRACKS.</p>
+                </div>
+
+               <p class="privacy-text">BY PRESSING "SUBMIT ORDER" YOU AGREE TO THE <a href="privacy-policy.html" class="privacy-link">PRIVACY POLICY</a> OF THIS SITE.</p>
+                <button type="submit" class="btn">SUBMIT ORDER</button>
+            </form>
+        </div>
+    </section>
+
+        <footer>
+        <div class="container">
+            <p>© 2025 CHANO STUDIO. ALL RIGHTS RESERVED.</p>
+            <ul class="footer-links">
+                <li><a href="https://www.instagram.com/chano.studio/" target="_blank">INSTAGRAM</a></li>
+                <li><a href="https://www.soundcloud.com/chano.studio/" target="_blank">SOUNDCLOUD</a></li>
+                <li><a href="https://www.threads.com/chano.studio/" target="_blank">THREADS</a></li>
+                <li><a href="mailto:info@chano.studio">MAIL</a></li>
+                <li><a href="#">BLOG</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "title": "STEREO MASTERING",
+    "mainPrice": "30€",
+    "priceModifier": "/TRACK",
+    "priceTaxInfo": "+TAX",
+    "features": [
+      "HIGH-END PROCESSING",
+      "EQ, COMPRESSION, LIMITING, STEREO WIDENING",
+      "LOUDNESS OPTIMIZATION",
+      "UP TO 2 REVISIONS INCLUDED",
+      "TYPICAL TURNAROUND: 2-3 BUSINESS DAYS"
+    ],
+    "cta": "ORDER NOW",
+    "ctaHref": "/order"
+  },
+  {
+    "id": 2,
+    "title": "STEM MASTERING",
+    "mainPrice": "60€",
+    "priceModifier": "/TRACK",
+    "priceTaxInfo": "(UP TO 8 STEMS) + TAX",
+    "features": [
+      "INDIVIDUAL STEM PROCESSING",
+      "GREATER CONTROL OVER THE ELEMENTS",
+      "ENHANCED CLARITY AND DEPTH",
+      "LOUDNESS OPTIMIZATION",
+      "UP TO 2 REVISIONS INCLUDED",
+      "FINAL MASTER DELIVERED",
+      "TYPICAL TURNAROUND: 3-5 BUSINESS DAYS"
+    ],
+    "cta": "ORDER NOW",
+    "ctaHref": "/order"
+  },
+  {
+    "id": 3,
+    "title": "STEM MASTERING",
+    "mainPrice": "80€",
+    "priceModifier": "/TRACK",
+    "priceTaxInfo": "(UP TO 15 STEMS) + TAX",
+    "features": [
+      "INDIVIDUAL STEM PROCESSING",
+      "GREATER CONTROL OVER THE ELEMENTS",
+      "ENHANCED CLARITY AND DEPTH",
+      "LOUDNESS OPTIMIZATION",
+      "UP TO 2 REVISIONS INCLUDED",
+      "FINAL MASTER DELIVERED",
+      "TYPICAL TURNAROUND: 3-5 BUSINESS DAYS"
+    ],
+    "cta": "ORDER NOW",
+    "ctaHref": "/order"
+  },
+  {
+    "id": 4,
+    "title": "MIX + MASTERING",
+    "mainPrice": "90€",
+    "priceModifier": "/TRACK",
+    "priceTaxInfo": "(UP TO 25 STEMS) + TAX",
+    "features": [
+      "GREATER CONTROL OVER THE MIX ELEMENTS",
+      "INDIVIDUAL STEM PROCESSING",
+      "ENHANCED CLARITY AND DEPTH",
+      "LOUDNESS OPTIMIZATION",
+      "FINAL MIXDOWN & MASTER DELIVERED",
+      "UP TO 2 REVISIONS INCLUDED",
+      "TYPICAL TURNAROUND: 3-5 BUSINESS DAYS"
+    ],
+    "cta": "ORDER NOW",
+    "ctaHref": "/order"
+  },
+  {
+    "id": 5,
+    "title": "PERIODICAL WORKS",
+    "mainPrice": "CONTACT US",
+    "priceModifier": "FOR A QUOTE",
+    "priceTaxInfo": "",
+    "features": [
+      "LABELS OR ARTISTS",
+      "ALL MENTIONED IN PREVIOUS QUOTES",
+      "PERSONALIZED BUDGET",
+      "PERSONALIZED APPROACH",
+      "APPLIES SAME TURNAROUND TIMES"
+    ],
+    "cta": "REQUEST QUOTE",
+    "ctaHref": "/#contact"
+  }
+]

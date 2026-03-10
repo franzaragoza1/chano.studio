@@ -1,0 +1,443 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    text-transform: uppercase;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/logotipo_chano2background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80% auto; 
+    opacity: 0.85; 
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+u {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid #000000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+/* Sections */
+section {
+    padding: 80px 0 60px;
+}
+
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+.hero-text {
+     width: 100%;
+     text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.hero-text h1 u {
+   text-decoration: underline;
+}
+
+/* Works Section */
+#works .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-card {
+    border: 1px solid #000000;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.portfolio-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.portfolio-info {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #ffffff8e
+}
+
+.portfolio-info h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.portfolio-info p {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.portfolio-card iframe {
+    width: 100%;
+    border: none;
+    margin-top: auto;
+}
+
+/* Pricing Section */
+#pricing .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.pricing-plan {
+    border: 1px solid #000000;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.67)
+}
+
+.pricing-plan .price {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pricing-plan .price .main-price {
+}
+
+.pricing-plan .price .price-modifier {
+    font-size: 0.8em;
+    opacity: 0.7;
+    font-weight: normal;
+    margin-left: 5px;
+    display: inline;
+}
+
+.pricing-plan .price .price-tax-info {
+    font-size: 0.6em;
+    opacity: 0.7;
+    font-weight: normal;
+    display: block;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 5px;
+}
+
+.pricing-plan ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.pricing-plan ul li {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.pricing-plan ul li::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* About Us Section */
+#about {
+}
+
+#about .container {
+    text-align: left;
+}
+
+#about h2 {
+     text-align: center;
+}
+
+#about p {
+    text-align: left;
+}
+
+/* Contact Section */
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.form-help-text {
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.privacy-text {
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.privacy-text .privacy-link {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.footer-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 1200px) {
+    body::before {
+        background-size: 900px auto; 
+    }
+}
+
+@media (max-width: 767px) { 
+    header nav ul li {
+        margin-left: 5px; 
+    }
+
+    header nav ul li a {
+        font-size: 0.65em; 
+        padding: 3px 1px; 
+    }
+
+    .logo img {
+        height: 22px;
+    }
+    
+    .footer-links {
+        font-size: 0.70em;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-links {
+        justify-content: flex-start;
+    }
+
+    .footer-links li:nth-child(4) {
+        margin-left: auto;
+    }
+    
+/* --- ESTILOS PARA EL BLOG --- */
+
+.blog-post-summary {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Línea separadora suave */
+}
+
+.blog-post-summary h3 {
+    text-align: left; /* Alinea el título de la entrada a la izquierda */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.blog-post-summary .post-date {
+    font-size: 0.8em;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.blog-post-summary p {
+    text-align: left; /* Alinea el texto de la entrada a la izquierda */
+    margin-bottom: 15px;
+}
+
+/* Estilo para los botones pequeños dentro del blog */
+.small-btn {
+    padding: 8px 15px;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+#single-blog-post h2 {
+    text-align: left; /* Título principal de la entrada individual a la izquierda */
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+#single-blog-post .post-date {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+#single-blog-post p {
+    text-align: left; /* Alinea los párrafos de la entrada individual a la izquierda */
+    margin-bottom: 20px;
+}
+}
+
