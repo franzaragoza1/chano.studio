@@ -8,10 +8,28 @@ import Footer from '@/components/Footer'
 import Watermark from '@/components/Watermark'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
 
-import portfolioData from '@/data/portfolio.json'
+import { headers } from 'next/headers'
 import pricingData from '@/data/pricing.json'
+import defaultPortfolio from '@/data/portfolio.json'
 
-export default function Home() {
+async function getPortfolioData() {
+  try {
+    const host = headers().get('host') || 'localhost:3000'
+    const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
+    
+    // Configured for dynamic fetching (no cache) to show admin edits immediately
+    const res = await fetch(`${protocol}://${host}/api/works`, { cache: 'no-store' })
+    if (!res.ok) return defaultPortfolio
+    return res.json()
+  } catch (error) {
+    console.warn("Failed to fetch dynamic works, using local JSON", error)
+    return defaultPortfolio
+  }
+}
+
+export default async function Home() {
+  const portfolioData = await getPortfolioData()
+
   return (
     <>
       <Watermark />
