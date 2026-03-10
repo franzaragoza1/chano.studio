@@ -46,8 +46,8 @@ export async function POST(req: NextRequest) {
       html: `
         <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 8px; color: #333333;">
           <div style="text-align: center; margin-bottom: 30px;">
-            <h1 style="margin: 0; font-size: 24px; letter-spacing: 2px; color: #000;">CHANO STUDIO</h1>
-            <p style="margin: 5px 0 0 0; font-size: 14px; color: #666; letter-spacing: 1px;">CREATIVE VISUALS</p>
+            <img src="https://chano.pro/img/logotipo_chano2.png" alt="Chano Studio Logo" style="max-height: 50px; display: block; margin: 0 auto 10px;" />
+            <p style="margin: 5px 0 0 0; font-size: 14px; color: #666; letter-spacing: 1px; text-transform: uppercase;">Indecent Audio Works</p>
           </div>
           
           <h2 style="font-size: 18px; color: #000; font-weight: 500;">Hello ${name},</h2>
