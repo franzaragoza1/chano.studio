@@ -10,16 +10,6 @@
     "embedSrc": "https://open.spotify.com/embed/album/52cssYdL1aANRpISnaM5Eu?utm_source=generator"
   },
   {
-    "id": 2,
-    "title": "MAGIA EN TU CABEZA (TEEMON&POOMBA REMIX)",
-    "label": "BURNING SYNTHS",
-    "service": "MIXED BY CHANO STUDIO",
-    "image": "https://f4.bcbits.com/img/a4127595799_10.jpg",
-    "alt": "Magia En Tu Cabeza Teemon Poomba Remix Album Art",
-    "embedType": "spotify",
-    "embedSrc": "https://open.spotify.com/embed/track/2j4YjHIfsIou8OocaSKlT1?utm_source=generator"
-  },
-  {
     "id": 3,
     "title": "TEEMON & POOMBA - STELLAR RAIN EP",
     "label": "ROTTEN CITY RECORDS",
@@ -28,16 +18,6 @@
     "alt": "Teemon & Poomba - Stellar Rain EP Album Art",
     "embedType": "bandcamp",
     "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=1878486361/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
-  },
-  {
-    "id": 4,
-    "title": "FRANKYDRAMA - A SOLID RESEARCH EP",
-    "label": "CRIMINAL CRISIS",
-    "service": "MIXED AND MASTERED BY CHANO STUDIO",
-    "image": "https://f4.bcbits.com/img/a1381670994_16.jpg",
-    "alt": "A Solid Research by frankydrama Album Art",
-    "embedType": "spotify",
-    "embedSrc": "https://open.spotify.com/embed/album/5JD91vpV2CKkrVlc8Qx68h?utm_source=generator&theme=0"
   },
   {
     "id": 5,
@@ -50,13 +30,33 @@
     "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=2079413701/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
   },
   {
-    "id": 6,
-    "title": "FRANKYDRAMA - MOVE LIKE THAT EP",
-    "label": "UNITED COLORS OF RHYTHM",
-    "service": "MIXED AND MASTERED BY CHANO STUDIO",
-    "image": "https://f4.bcbits.com/img/a2398358151_16.jpg",
-    "alt": "Move Like That EP by frankydrama Album Art",
-    "embedType": "spotify",
-    "embedSrc": "https://open.spotify.com/embed/album/2ZcF84wDHa335uIUHC98ZO?utm_source=generator"
+    "id": 7,
+    "title": "JGR - BLURRY TRIP EP",
+    "label": "ROTTEN CITY RECORDS",
+    "service": "MASTERED BY CHANO STUDIO",
+    "image": "/img/jgr.jpg",
+    "alt": "JGR - Blurry Trip EP Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=797721618/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 8,
+    "title": "RAVETOP - ISOLATED RHYTHM SYSTEM",
+    "label": "ROTTEN CITY RECORDS",
+    "service": "MASTERED BY CHANO STUDIO",
+    "image": "/img/ravetop.jpg",
+    "alt": "Ravetop - Isolated Rhythm System Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=912593972/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 9,
+    "title": "JACKWASFASTER - WHO KILLED JWF?",
+    "label": "ROTTEN CITY RECORDS",
+    "service": "MASTERED BY CHANO STUDIO",
+    "image": "/img/jackwasfaster.jpg",
+    "alt": "JackWasFaster - Who Killed JWF? Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=2307436680/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
   }
 ]

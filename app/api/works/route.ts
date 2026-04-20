@@ -1,55 +1,65 @@
 import { NextResponse } from 'next/server';
-import { Redis } from '@upstash/redis';
-import defaultWorks from '@/data/portfolio.json';
+import path from 'path';
+import fs from 'fs';
 
-// Initialize Redis directly or handle local fallback if no env vars present
-// Vercel KV sets UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN automatically
-const redis = (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN)
-  ? new Redis({
+let redis: any = null;
+try {
+  if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+    const { Redis } = require('@upstash/redis');
+    redis = new Redis({
       url: process.env.UPSTASH_REDIS_REST_URL,
       token: process.env.UPSTASH_REDIS_REST_TOKEN,
-    })
-  : null;
+    });
+  }
+} catch {}
 
 const WORKS_KEY = 'chano_works';
+const JSON_PATH = path.join(process.cwd(), 'data', 'portfolio.json');
+
+function readLocalWorks() {
+  const raw = fs.readFileSync(JSON_PATH, 'utf-8');
+  return JSON.parse(raw);
+}
+
+function writeLocalWorks(data: any[]) {
+  fs.writeFileSync(JSON_PATH, JSON.stringify(data, null, 2), 'utf-8');
+}
 
 export async function GET() {
   try {
     if (!redis) {
-      console.warn("Redis not configured, returning local JSON");
-      return NextResponse.json(defaultWorks);
+      return NextResponse.json(readLocalWorks());
     }
-
     const works = await redis.get(WORKS_KEY);
-    
-    // If empty in database, seed with the default local JSON
     if (!works) {
-      await redis.set(WORKS_KEY, JSON.stringify(defaultWorks));
-      return NextResponse.json(defaultWorks);
+      const local = readLocalWorks();
+      await redis.set(WORKS_KEY, JSON.stringify(local));
+      return NextResponse.json(local);
     }
-
     return NextResponse.json(works);
   } catch (error) {
     console.error('Error fetching works:', error);
-    return NextResponse.json(defaultWorks, { status: 200 }); // fallback
+    return NextResponse.json(readLocalWorks(), { status: 200 });
   }
 }
 
 export async function POST(req: Request) {
   try {
-    // Check for authorization header (simple password check)
     const authHeader = req.headers.get('authorization');
-    if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
+    const adminPass = process.env.ADMIN_PASSWORD || 'admin';
+    if (!authHeader || authHeader !== `Bearer ${adminPass}`) {
       return new NextResponse('Unauthorized', { status: 401 });
     }
 
+    const newWorks = await req.json();
+
     if (!redis) {
-      return new NextResponse('Redis not configured', { status: 500 });
+      // Local mode: write directly to portfolio.json
+      writeLocalWorks(newWorks);
+      return NextResponse.json({ success: true, works: newWorks });
     }
 
-    const newWorks = await req.json();
     await redis.set(WORKS_KEY, JSON.stringify(newWorks));
-
     return NextResponse.json({ success: true, works: newWorks });
   } catch (error) {
     console.error('Error saving works:', error);
