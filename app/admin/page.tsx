@@ -15,6 +15,15 @@ interface PortfolioItem {
   embedSrc: string
 }
 
+async function getSaveError(res: Response) {
+  if (res.status === 401) return 'Unauthorized: wrong admin password. Log out and log in again.'
+  try {
+    const data = await res.json()
+    if (data?.error) return `Error saving data: ${data.error}`
+  } catch {}
+  return `Error saving data (HTTP ${res.status}).`
+}
+
 export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [password, setPassword] = useState('')
@@ -104,7 +113,7 @@ export default function AdminDashboard() {
         setIsAddingNew(false)
         setFormData({})
       } else {
-        alert("Error saving data. Make sure Redis is configured in Vercel.")
+        alert(await getSaveError(res))
       }
     } catch (err) {
       alert("Failed to save changes")
@@ -130,6 +139,7 @@ export default function AdminDashboard() {
       })
 
       if (res.ok) setWorks(updatedWorks)
+      else alert(await getSaveError(res))
     } catch (err) {
       alert("Failed to delete")
     }

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { escapeHtml } from '@/lib/escapeHtml'
 
 export async function POST(req: NextRequest) {
   const { name, email, message } = await req.json()
@@ -8,10 +9,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
   }
 
+  const port = Number(process.env.EMAIL_PORT) || 587
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: Number(process.env.EMAIL_PORT) || 587,
-    secure: false,
+    port,
+    secure: port === 465, // implicit TLS on 465, STARTTLS otherwise
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -20,10 +22,17 @@ export async function POST(req: NextRequest) {
 
   const recipient = process.env.EMAIL_TO || 'info@chano.studio'
 
+  // Escaped copies for the HTML template
+  const safe = {
+    name: escapeHtml(name),
+    email: escapeHtml(email),
+    message: escapeHtml(message),
+  }
+
   try {
     // Email to studio
     await transporter.sendMail({
-      from: `"${name}" <${process.env.EMAIL_USER}>`,
+      from: { name: String(name), address: process.env.EMAIL_USER || '' },
       replyTo: email,
       to: recipient,
       subject: `NEW CONTACT FORM: ${name}`,
@@ -38,11 +47,11 @@ export async function POST(req: NextRequest) {
       html: `
         <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 8px; color: #333333;">
           <div style="text-align: center; margin-bottom: 30px;">
-            <img src="https://chano.pro/img/logotipo_chano2.png" alt="Chano Studio Logo" style="max-height: 50px; display: block; margin: 0 auto 10px;" />
+            <img src="https://chano.studio/img/logotipo_chano2.png" alt="Chano Studio Logo" style="max-height: 50px; display: block; margin: 0 auto 10px;" />
             <p style="margin: 5px 0 0 0; font-size: 14px; color: #666; letter-spacing: 1px; text-transform: uppercase;">Indecent Audio Works</p>
           </div>
           
-          <h2 style="font-size: 18px; color: #000; font-weight: 500;">Hello ${name},</h2>
+          <h2 style="font-size: 18px; color: #000; font-weight: 500;">Hello ${safe.name},</h2>
           
           <p style="font-size: 15px; line-height: 1.6; color: #444;">
             Thank you for reaching out to Chano Studio. We have successfully received your message and our team will get back to you as soon as possible.
@@ -50,9 +59,9 @@ export async function POST(req: NextRequest) {
           
           <div style="background-color: #f9f9f9; padding: 20px; border-left: 3px solid #000; margin: 25px 0;">
             <p style="margin: 0 0 10px 0; font-size: 13px; color: #666; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">Your Message summary</p>
-            <p style="margin: 0 0 5px 0; font-size: 14px;"><strong>Name:</strong> ${name}</p>
-            <p style="margin: 0 0 15px 0; font-size: 14px;"><strong>Email:</strong> ${email}</p>
-            <p style="margin: 0; font-size: 14px; font-style: italic; color: #555;">"${message}"</p>
+            <p style="margin: 0 0 5px 0; font-size: 14px;"><strong>Name:</strong> ${safe.name}</p>
+            <p style="margin: 0 0 15px 0; font-size: 14px;"><strong>Email:</strong> ${safe.email}</p>
+            <p style="margin: 0; font-size: 14px; font-style: italic; color: #555;">"${safe.message}"</p>
           </div>
           
           <p style="font-size: 15px; line-height: 1.6; color: #444;">

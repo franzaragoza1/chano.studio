@@ -12,6 +12,9 @@ import { headers } from 'next/headers'
 import pricingData from '@/data/pricing.json'
 import defaultPortfolio from '@/data/portfolio.json'
 
+// Always render on request so /admin edits show up immediately
+export const dynamic = 'force-dynamic'
+
 async function getPortfolioData() {
   try {
     const host = headers().get('host') || 'localhost:3000'
