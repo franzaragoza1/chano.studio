@@ -2,7 +2,11 @@ import { NextResponse } from 'next/server';
 import path from 'path';
 import fs from 'fs';
 
-// Accept both Upstash's own variable names and the Vercel KV / Marketplace ones
+// Storage for the portfolio edited from /admin, in order of preference:
+// 1. Upstash Redis, if its env vars are set (Upstash or Vercel KV names)
+// 2. Netlify Blobs, when running on Netlify (no configuration needed)
+// 3. data/portfolio.json, read-only except in local development
+
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
 
@@ -20,6 +24,35 @@ try {
 const WORKS_KEY = 'chano_works';
 const JSON_PATH = path.join(process.cwd(), 'data', 'portfolio.json');
 const IS_LOCAL_DEV = process.env.NODE_ENV === 'development';
+
+interface WorksStore {
+  get(): Promise<any[] | null>;
+  set(data: any[]): Promise<void>;
+}
+
+async function getBlobStore(): Promise<WorksStore | null> {
+  try {
+    const { getStore } = await import('@netlify/blobs');
+    // Throws outside Netlify, where no Blobs environment is available
+    const store = getStore({ name: 'portfolio', consistency: 'strong' });
+    return {
+      get: () => store.get(WORKS_KEY, { type: 'json' }),
+      set: (data) => store.setJSON(WORKS_KEY, data).then(() => undefined),
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function getRemoteStore(): Promise<WorksStore | null> {
+  if (redis) {
+    return {
+      get: () => redis.get(WORKS_KEY),
+      set: (data) => redis.set(WORKS_KEY, JSON.stringify(data)),
+    };
+  }
+  return getBlobStore();
+}
 
 function readLocalWorks() {
   const raw = fs.readFileSync(JSON_PATH, 'utf-8');
@@ -44,13 +77,14 @@ export async function GET(req: Request) {
   }
 
   try {
-    if (!redis) {
+    const store = await getRemoteStore();
+    if (!store) {
       return NextResponse.json(readLocalWorks());
     }
-    const works = await redis.get(WORKS_KEY);
+    const works = await store.get();
     if (!works) {
       const local = readLocalWorks();
-      await redis.set(WORKS_KEY, JSON.stringify(local));
+      await store.set(local);
       return NextResponse.json(local);
     }
     return NextResponse.json(works);
@@ -68,11 +102,12 @@ export async function POST(req: Request) {
 
     const newWorks = await req.json();
 
-    if (!redis) {
+    const store = await getRemoteStore();
+    if (!store) {
       // The deployed filesystem is read-only, so only local dev may write the JSON file
       if (!IS_LOCAL_DEV) {
         return NextResponse.json(
-          { error: 'Redis is not configured (UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN). Changes cannot be saved.' },
+          { error: 'No storage configured (Upstash Redis or Netlify Blobs). Changes cannot be saved.' },
           { status: 503 }
         );
       }
@@ -80,7 +115,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, works: newWorks });
     }
 
-    await redis.set(WORKS_KEY, JSON.stringify(newWorks));
+    await store.set(newWorks);
     return NextResponse.json({ success: true, works: newWorks });
   } catch (error) {
     console.error('Error saving works:', error);
