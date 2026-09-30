@@ -1,5 +1,65 @@
 [
   {
+    "id": 10,
+    "title": "FRANKYDRAMA - LEFTA FM",
+    "label": "FAUX POLY",
+    "service": "MIXED BY CHANO STUDIO",
+    "image": "/img/works/lefta-fm.jpg",
+    "alt": "frankydrama - Lefta FM Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=676404035/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 11,
+    "title": "TEEMON & POOMBA - DEAR HONEY",
+    "label": "MÚSICA CAVERNÍCOLA",
+    "service": "MIXED & MASTERED BY CHANO STUDIO",
+    "image": "/img/works/dear-honey.jpg",
+    "alt": "Teemon & Poomba - Dear Honey Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=662509735/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 12,
+    "title": "CLASS B BAND - MUSTANG ROAD",
+    "label": "ROTTEN CITY RECORDS",
+    "service": "MASTERED BY CHANO STUDIO",
+    "image": "/img/works/mustang-road.jpg",
+    "alt": "Class B Band - Mustang Road Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=3312714685/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 13,
+    "title": "FRANKYDRAMA - CLUB TOOLS VOL. 1",
+    "label": "CRIMINAL CRISIS",
+    "service": "MIXED & MASTERED BY CHANO STUDIO",
+    "image": "/img/works/club-tools-vol-1.jpg",
+    "alt": "frankydrama - Club Tools Vol. 1 Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=2116605267/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 14,
+    "title": "ASTROLOOP - LOVERS TRIBE EP",
+    "label": "ROTTEN CITY RECORDS",
+    "service": "MASTERED BY CHANO STUDIO",
+    "image": "/img/works/lovers-tribe-ep.jpg",
+    "alt": "Astroloop - Lovers Tribe EP Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=1994805965/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 15,
+    "title": "O.P.S. - NEW DEAL EP",
+    "label": "ROTTEN CITY RECORDS",
+    "service": "MASTERED BY CHANO STUDIO",
+    "image": "/img/works/new-deal-ep.jpg",
+    "alt": "O.P.S. - New Deal EP Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=3622730935/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
     "id": 1,
     "title": "FRANKYDRAMA - AND ONE EP",
     "label": "FAUX POLY",
@@ -8,6 +68,36 @@
     "alt": "frankydrama - And One EP Album Art",
     "embedType": "spotify",
     "embedSrc": "https://open.spotify.com/embed/album/52cssYdL1aANRpISnaM5Eu?utm_source=generator"
+  },
+  {
+    "id": 8,
+    "title": "RAVETOP - ISOLATED RHYTHM SYSTEM",
+    "label": "ROTTEN CITY RECORDS",
+    "service": "MASTERED BY CHANO STUDIO",
+    "image": "/img/works/isolated-rhythm-system.jpg",
+    "alt": "Ravetop - Isolated Rhythm System Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=1749052004/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 16,
+    "title": "FRANKYDRAMA - STRICTLY HUMAN PSEUDO STORIES",
+    "label": "CRIMINAL CRISIS",
+    "service": "MIXED & MASTERED BY CHANO STUDIO",
+    "image": "/img/works/strictly-human-pseudo-stories.jpg",
+    "alt": "frankydrama - Strictly Human Pseudo Stories Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=1341156954/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+  },
+  {
+    "id": 17,
+    "title": "CLASS B BAND - LOTUS REVOLUTION",
+    "label": "ROTTEN CITY RECORDS",
+    "service": "MASTERED BY CHANO STUDIO",
+    "image": "/img/works/lotus-revolution.jpg",
+    "alt": "Class B Band - Lotus Revolution Album Art",
+    "embedType": "bandcamp",
+    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=3020904127/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
   },
   {
     "id": 3,
@@ -20,43 +110,13 @@
     "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=1878486361/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
   },
   {
-    "id": 5,
-    "title": "ROY HEYMANN - DIFFERENT PLACE EP",
-    "label": "ROTTEN CITY RECORDS",
-    "service": "MASTERED BY CHANO STUDIO",
-    "image": "https://f4.bcbits.com/img/a3837692001_16.jpg",
-    "alt": "Roy Heimann - Different Place EP Album Art",
-    "embedType": "bandcamp",
-    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=2079413701/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
-  },
-  {
     "id": 7,
     "title": "JGR - BLURRY TRIP EP",
     "label": "ROTTEN CITY RECORDS",
     "service": "MASTERED BY CHANO STUDIO",
-    "image": "/img/jgr.jpg",
+    "image": "/img/works/blurry-trip-ep.jpg",
     "alt": "JGR - Blurry Trip EP Album Art",
     "embedType": "bandcamp",
     "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=797721618/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
-  },
-  {
-    "id": 8,
-    "title": "RAVETOP - ISOLATED RHYTHM SYSTEM",
-    "label": "ROTTEN CITY RECORDS",
-    "service": "MASTERED BY CHANO STUDIO",
-    "image": "/img/ravetop.jpg",
-    "alt": "Ravetop - Isolated Rhythm System Album Art",
-    "embedType": "bandcamp",
-    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=1749052004/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
-  },
-  {
-    "id": 9,
-    "title": "JACKWASFASTER - WHO KILLED JWF?",
-    "label": "ROTTEN CITY RECORDS",
-    "service": "MASTERED BY CHANO STUDIO",
-    "image": "/img/jackwasfaster.jpg",
-    "alt": "JackWasFaster - Who Killed JWF? Album Art",
-    "embedType": "bandcamp",
-    "embedSrc": "https://bandcamp.com/EmbeddedPlayer/album=2307436680/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
   }
 ]
